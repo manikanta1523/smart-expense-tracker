@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expenses | Smart Expense Tracker</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <a class="brand sidebar-brand" href="dashboard.html"><span class="brand-mark">₹</span><span>Smart<span class="brand-light">Tracker</span></span></a>
+  <div class="user-mini"><div class="avatar" id="userAvatar">U</div><div><strong id="sideUserName">User</strong><small id="sideUserEmail"></small></div></div>
+  <nav class="sidebar-nav"><a class="nav-link " href="dashboard.html"><span>▦</span>Dashboard</a><a class="nav-link active" href="expenses.html"><span>−</span>Expenses</a><a class="nav-link " href="income.html"><span>+</span>Income</a><a class="nav-link " href="budget.html"><span>▤</span>Budgets</a><a class="nav-link " href="accounts.html"><span>◫</span>Accounts</a><a class="nav-link " href="reports.html"><span>◔</span>Reports</a></nav>
+  <div class="sidebar-bottom"><a class="nav-link" href="index.html"><span>⌂</span>Home</a><button class="nav-link logout-btn" id="logoutBtn"><span>↪</span>Logout</button></div>
+</aside>
+<div class="main-area">
+<header class="topbar">
+  <button class="mobile-menu" id="mobileMenu">☰</button>
+  <div><p class="topbar-label">PERSONAL FINANCE</p><h2>Expenses</h2></div>
+  <div class="topbar-actions"><span class="date-pill" id="todayDate"></span><div class="avatar" id="topAvatar">U</div></div>
+</header>
+<main class="page-content">
+
+<div class="page-heading"><div><p class="eyebrow">TRANSACTIONS</p><h1>Expense Management</h1><p class="muted">Record and manage everything you spend.</p></div><button class="btn btn-primary" id="addExpenseBtn">+ Add Expense</button></div>
+<section class="panel">
+  <div class="filters"><input id="expenseSearch" type="search" placeholder="Search description or category..."><select id="expenseCategoryFilter"><option value="">All categories</option></select><select id="expenseAccountFilter"><option value="">All accounts</option></select><input id="expenseDateFilter" type="month"><button class="btn btn-secondary" id="clearExpenseFilters">Clear</button></div>
+</section>
+<section class="panel"><div class="panel-head"><div><h3>Expense History</h3><p id="expenseCount">0 transactions</p></div><button class="btn btn-secondary btn-small" id="exportExpenseBtn">Export CSV</button></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Account</th><th>Amount</th><th>Actions</th></tr></thead><tbody id="expenseTable"></tbody></table></div></section>
+<div class="modal" id="expenseModal"><div class="modal-card"><div class="modal-head"><h3 id="expenseModalTitle">Add Expense</h3><button class="modal-close" data-close="expenseModal">×</button></div><form id="expenseForm" class="form-grid"><input type="hidden" id="expenseId"><label>Amount<input id="expenseAmount" type="number" min="0.01" step="0.01" required></label><label>Category<select id="expenseCategory" required></select></label><label>Account<select id="expenseAccount" required></select></label><label>Date<input id="expenseDate" type="date" required></label><label class="full">Description<input id="expenseDescription" type="text" maxlength="100" placeholder="e.g. Lunch with friends" required></label><label class="check-row full"><input id="expenseRecurring" type="checkbox"> Save as recurring expense</label><div class="modal-actions full"><button type="button" class="btn btn-secondary" data-close="expenseModal">Cancel</button><button class="btn btn-primary" type="submit">Save Expense</button></div></form></div></div>
+
+</main>
+</div>
+</div>
+<div id="toast"></div>
+<script src="js/auth.js"></script>
+<script src="js/expenses.js"></script>
+</body>
+</html>

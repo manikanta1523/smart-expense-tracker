@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Income | Smart Expense Tracker</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <a class="brand sidebar-brand" href="dashboard.html"><span class="brand-mark">₹</span><span>Smart<span class="brand-light">Tracker</span></span></a>
+  <div class="user-mini"><div class="avatar" id="userAvatar">U</div><div><strong id="sideUserName">User</strong><small id="sideUserEmail"></small></div></div>
+  <nav class="sidebar-nav"><a class="nav-link " href="dashboard.html"><span>▦</span>Dashboard</a><a class="nav-link " href="expenses.html"><span>−</span>Expenses</a><a class="nav-link active" href="income.html"><span>+</span>Income</a><a class="nav-link " href="budget.html"><span>▤</span>Budgets</a><a class="nav-link " href="accounts.html"><span>◫</span>Accounts</a><a class="nav-link " href="reports.html"><span>◔</span>Reports</a></nav>
+  <div class="sidebar-bottom"><a class="nav-link" href="index.html"><span>⌂</span>Home</a><button class="nav-link logout-btn" id="logoutBtn"><span>↪</span>Logout</button></div>
+</aside>
+<div class="main-area">
+<header class="topbar">
+  <button class="mobile-menu" id="mobileMenu">☰</button>
+  <div><p class="topbar-label">PERSONAL FINANCE</p><h2>Income</h2></div>
+  <div class="topbar-actions"><span class="date-pill" id="todayDate"></span><div class="avatar" id="topAvatar">U</div></div>
+</header>
+<main class="page-content">
+
+<div class="page-heading"><div><p class="eyebrow">MONEY IN</p><h1>Income Management</h1><p class="muted">Track salaries, freelance payments and other income.</p></div><button class="btn btn-primary" id="addIncomeBtn">+ Add Income</button></div>
+<section class="panel"><div class="filters"><input id="incomeSearch" type="search" placeholder="Search source or description..."><input id="incomeDateFilter" type="month"><button class="btn btn-secondary" id="clearIncomeFilters">Clear</button></div></section>
+<section class="panel"><div class="panel-head"><div><h3>Income History</h3><p id="incomeCount">0 transactions</p></div><button class="btn btn-secondary btn-small" id="exportIncomeBtn">Export CSV</button></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Source</th><th>Description</th><th>Amount</th><th>Actions</th></tr></thead><tbody id="incomeTable"></tbody></table></div></section>
+<div class="modal" id="incomeModal"><div class="modal-card"><div class="modal-head"><h3 id="incomeModalTitle">Add Income</h3><button class="modal-close" data-close="incomeModal">×</button></div><form id="incomeForm" class="form-grid"><input type="hidden" id="incomeId"><label>Amount<input id="incomeAmount" type="number" min="0.01" step="0.01" required></label><label>Source<select id="incomeSource" required><option value="">Select source</option><option>Salary</option><option>Freelance</option><option>Business</option><option>Gift</option><option>Interest</option><option>Other</option></select></label><label>Date<input id="incomeDate" type="date" required></label><label>Account<select id="incomeAccount" required></select></label><label class="full">Description<input id="incomeDescription" maxlength="100" placeholder="e.g. September salary"></label><div class="modal-actions full"><button type="button" class="btn btn-secondary" data-close="incomeModal">Cancel</button><button class="btn btn-primary" type="submit">Save Income</button></div></form></div></div>
+
+</main>
+</div>
+</div>
+<div id="toast"></div>
+<script src="js/auth.js"></script>
+<script src="js/income.js"></script>
+</body>
+</html>

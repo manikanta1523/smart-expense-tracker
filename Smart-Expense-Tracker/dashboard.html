@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | Smart Expense Tracker</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <a class="brand sidebar-brand" href="dashboard.html"><span class="brand-mark">₹</span><span>Smart<span class="brand-light">Tracker</span></span></a>
+  <div class="user-mini"><div class="avatar" id="userAvatar">U</div><div><strong id="sideUserName">User</strong><small id="sideUserEmail"></small></div></div>
+  <nav class="sidebar-nav"><a class="nav-link active" href="dashboard.html"><span>▦</span>Dashboard</a><a class="nav-link " href="expenses.html"><span>−</span>Expenses</a><a class="nav-link " href="income.html"><span>+</span>Income</a><a class="nav-link " href="budget.html"><span>▤</span>Budgets</a><a class="nav-link " href="accounts.html"><span>◫</span>Accounts</a><a class="nav-link " href="reports.html"><span>◔</span>Reports</a></nav>
+  <div class="sidebar-bottom"><a class="nav-link" href="index.html"><span>⌂</span>Home</a><button class="nav-link logout-btn" id="logoutBtn"><span>↪</span>Logout</button></div>
+</aside>
+<div class="main-area">
+<header class="topbar">
+  <button class="mobile-menu" id="mobileMenu">☰</button>
+  <div><p class="topbar-label">PERSONAL FINANCE</p><h2>Dashboard</h2></div>
+  <div class="topbar-actions"><span class="date-pill" id="todayDate"></span><div class="avatar" id="topAvatar">U</div></div>
+</header>
+<main class="page-content">
+
+<section class="welcome-row">
+  <div><p class="eyebrow">OVERVIEW</p><h1>Hello, <span id="welcomeName">User</span> 👋</h1><p class="muted">Here is your financial summary.</p></div>
+  <a class="btn btn-primary" href="expenses.html">+ Add Expense</a>
+</section>
+<div class="stat-grid">
+  <div class="stat-card balance"><div class="stat-icon">₹</div><div><span>Total Balance</span><strong id="totalBalance">₹0.00</strong><small id="balanceHint">Income − expenses</small></div></div>
+  <div class="stat-card income"><div class="stat-icon">↗</div><div><span>Total Income</span><strong id="totalIncome">₹0.00</strong><small>All recorded income</small></div></div>
+  <div class="stat-card expense"><div class="stat-icon">↘</div><div><span>Total Expenses</span><strong id="totalExpense">₹0.00</strong><small>All recorded expenses</small></div></div>
+  <div class="stat-card budget"><div class="stat-icon">◫</div><div><span>Remaining Budget</span><strong id="remainingBudget">₹0.00</strong><small id="budgetHint">Set a monthly budget</small></div></div>
+</div>
+<div class="dashboard-grid">
+  <section class="panel wide"><div class="panel-head"><div><h3>Recent Transactions</h3><p>Latest income and expenses</p></div><a href="expenses.html">View all</a></div><div id="recentTransactions" class="transaction-list"></div></section>
+  <section class="panel"><div class="panel-head"><div><h3>Budget Progress</h3><p>This month</p></div><a href="budget.html">Manage</a></div><div id="dashboardBudgets"></div></section>
+  <section class="panel"><div class="panel-head"><div><h3>Expense Categories</h3><p>Where your money goes</p></div></div><div id="categorySummary" class="category-summary"></div></section>
+  <section class="panel wide"><div class="panel-head"><div><h3>Monthly Expense Summary</h3><p>Last 6 months</p></div><a href="reports.html">Reports</a></div><div id="monthlyBars" class="bar-chart"></div></section><section class="panel wide"><div class="panel-head"><div><h3>Upcoming Recurring Expenses</h3><p>Stored reminders for regular payments</p></div><a href="expenses.html">Manage</a></div><div id="recurringList" class="transaction-list"></div></section>
+</div>
+
+</main>
+</div>
+</div>
+<div id="toast"></div>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

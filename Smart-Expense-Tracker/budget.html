@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budgets | Smart Expense Tracker</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <a class="brand sidebar-brand" href="dashboard.html"><span class="brand-mark">₹</span><span>Smart<span class="brand-light">Tracker</span></span></a>
+  <div class="user-mini"><div class="avatar" id="userAvatar">U</div><div><strong id="sideUserName">User</strong><small id="sideUserEmail"></small></div></div>
+  <nav class="sidebar-nav"><a class="nav-link " href="dashboard.html"><span>▦</span>Dashboard</a><a class="nav-link " href="expenses.html"><span>−</span>Expenses</a><a class="nav-link " href="income.html"><span>+</span>Income</a><a class="nav-link active" href="budget.html"><span>▤</span>Budgets</a><a class="nav-link " href="accounts.html"><span>◫</span>Accounts</a><a class="nav-link " href="reports.html"><span>◔</span>Reports</a></nav>
+  <div class="sidebar-bottom"><a class="nav-link" href="index.html"><span>⌂</span>Home</a><button class="nav-link logout-btn" id="logoutBtn"><span>↪</span>Logout</button></div>
+</aside>
+<div class="main-area">
+<header class="topbar">
+  <button class="mobile-menu" id="mobileMenu">☰</button>
+  <div><p class="topbar-label">PERSONAL FINANCE</p><h2>Budgets</h2></div>
+  <div class="topbar-actions"><span class="date-pill" id="todayDate"></span><div class="avatar" id="topAvatar">U</div></div>
+</header>
+<main class="page-content">
+
+<div class="page-heading"><div><p class="eyebrow">PLANNING</p><h1>Budget Management</h1><p class="muted">Set limits and stay in control of spending.</p></div><button class="btn btn-primary" id="addBudgetBtn">+ Set Budget</button></div>
+<section class="panel"><div class="budget-overview"><div><span>Total Budget</span><strong id="budgetTotal">₹0.00</strong></div><div><span>Used</span><strong id="budgetUsed">₹0.00</strong></div><div><span>Remaining</span><strong id="budgetRemaining">₹0.00</strong></div></div></section>
+<section class="budget-grid" id="budgetCards"></section>
+<div class="modal" id="budgetModal"><div class="modal-card"><div class="modal-head"><h3>Set Monthly Budget</h3><button class="modal-close" data-close="budgetModal">×</button></div><form id="budgetForm" class="form-grid"><label>Month<input id="budgetMonth" type="month" required></label><label>Category<select id="budgetCategory" required></select></label><label>Budget Amount<input id="budgetAmount" type="number" min="0.01" step="0.01" required></label><div class="modal-actions full"><button type="button" class="btn btn-secondary" data-close="budgetModal">Cancel</button><button class="btn btn-primary">Save Budget</button></div></form></div></div>
+
+</main>
+</div>
+</div>
+<div id="toast"></div>
+<script src="js/auth.js"></script>
+<script src="js/budget.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accounts | Smart Expense Tracker</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <a class="brand sidebar-brand" href="dashboard.html"><span class="brand-mark">₹</span><span>Smart<span class="brand-light">Tracker</span></span></a>
+  <div class="user-mini"><div class="avatar" id="userAvatar">U</div><div><strong id="sideUserName">User</strong><small id="sideUserEmail"></small></div></div>
+  <nav class="sidebar-nav"><a class="nav-link " href="dashboard.html"><span>▦</span>Dashboard</a><a class="nav-link " href="expenses.html"><span>−</span>Expenses</a><a class="nav-link " href="income.html"><span>+</span>Income</a><a class="nav-link " href="budget.html"><span>▤</span>Budgets</a><a class="nav-link active" href="accounts.html"><span>◫</span>Accounts</a><a class="nav-link " href="reports.html"><span>◔</span>Reports</a></nav>
+  <div class="sidebar-bottom"><a class="nav-link" href="index.html"><span>⌂</span>Home</a><button class="nav-link logout-btn" id="logoutBtn"><span>↪</span>Logout</button></div>
+</aside>
+<div class="main-area">
+<header class="topbar">
+  <button class="mobile-menu" id="mobileMenu">☰</button>
+  <div><p class="topbar-label">PERSONAL FINANCE</p><h2>Accounts</h2></div>
+  <div class="topbar-actions"><span class="date-pill" id="todayDate"></span><div class="avatar" id="topAvatar">U</div></div>
+</header>
+<main class="page-content">
+
+<div class="page-heading"><div><p class="eyebrow">WALLETS</p><h1>Multiple Accounts</h1><p class="muted">Keep cash, bank, UPI and card balances organized.</p></div><button class="btn btn-primary" id="addAccountBtn">+ Add Account</button></div>
+<section class="account-grid" id="accountCards"></section>
+<section class="panel"><div class="panel-head"><div><h3>Account Summary</h3><p>Balances are calculated from your transactions.</p></div></div><div class="table-wrap"><table><thead><tr><th>Account</th><th>Type</th><th>Balance</th><th>Actions</th></tr></thead><tbody id="accountTable"></tbody></table></div></section>
+<div class="modal" id="accountModal"><div class="modal-card"><div class="modal-head"><h3 id="accountModalTitle">Add Account</h3><button class="modal-close" data-close="accountModal">×</button></div><form id="accountForm" class="form-grid"><input type="hidden" id="accountId"><label>Account Name<input id="accountName" maxlength="40" required placeholder="e.g. HDFC Bank"></label><label>Type<select id="accountType" required><option>Cash</option><option>Bank Account</option><option>UPI</option><option>Credit Card</option><option>Other</option></select></label><label>Opening Balance<input id="openingBalance" type="number" step="0.01" value="0"></label><div class="modal-actions full"><button type="button" class="btn btn-secondary" data-close="accountModal">Cancel</button><button class="btn btn-primary">Save Account</button></div></form></div></div>
+
+</main>
+</div>
+</div>
+<div id="toast"></div>
+<script src="js/auth.js"></script>
+<script src="js/accounts.js"></script>
+</body>
+</html>

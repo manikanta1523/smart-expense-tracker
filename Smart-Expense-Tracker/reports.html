@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports | Smart Expense Tracker</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <a class="brand sidebar-brand" href="dashboard.html"><span class="brand-mark">₹</span><span>Smart<span class="brand-light">Tracker</span></span></a>
+  <div class="user-mini"><div class="avatar" id="userAvatar">U</div><div><strong id="sideUserName">User</strong><small id="sideUserEmail"></small></div></div>
+  <nav class="sidebar-nav"><a class="nav-link " href="dashboard.html"><span>▦</span>Dashboard</a><a class="nav-link " href="expenses.html"><span>−</span>Expenses</a><a class="nav-link " href="income.html"><span>+</span>Income</a><a class="nav-link " href="budget.html"><span>▤</span>Budgets</a><a class="nav-link " href="accounts.html"><span>◫</span>Accounts</a><a class="nav-link active" href="reports.html"><span>◔</span>Reports</a></nav>
+  <div class="sidebar-bottom"><a class="nav-link" href="index.html"><span>⌂</span>Home</a><button class="nav-link logout-btn" id="logoutBtn"><span>↪</span>Logout</button></div>
+</aside>
+<div class="main-area">
+<header class="topbar">
+  <button class="mobile-menu" id="mobileMenu">☰</button>
+  <div><p class="topbar-label">PERSONAL FINANCE</p><h2>Reports</h2></div>
+  <div class="topbar-actions"><span class="date-pill" id="todayDate"></span><div class="avatar" id="topAvatar">U</div></div>
+</header>
+<main class="page-content">
+
+<div class="page-heading"><div><p class="eyebrow">INSIGHTS</p><h1>Reports & Analytics</h1><p class="muted">Understand financial patterns at a glance. Admins see overall system data.</p></div><button class="btn btn-secondary" id="exportAllBtn">Export Transactions</button></div>
+<div class="stat-grid compact"><div class="stat-card income"><div class="stat-icon">↗</div><div><span>Total Income</span><strong id="reportIncome">₹0</strong></div></div><div class="stat-card expense"><div class="stat-icon">↘</div><div><span>Total Expenses</span><strong id="reportExpense">₹0</strong></div></div><div class="stat-card balance"><div class="stat-icon">₹</div><div><span>Net Balance</span><strong id="reportNet">₹0</strong></div></div></div>
+<div class="report-grid">
+<section class="panel"><div class="panel-head"><div><h3>Income vs Expense</h3><p>Last 6 months</p></div></div><div id="incomeExpenseChart" class="bar-chart large"></div></section>
+<section class="panel"><div class="panel-head"><div><h3>Category-wise Expenses</h3><p>Current month</p></div></div><div id="categoryChart" class="horizontal-chart"></div></section>
+<section class="panel wide"><div class="panel-head"><div><h3>Monthly Expenses</h3><p>Last 6 months</p></div></div><div id="monthlyChart" class="bar-chart large"></div></section>
+<section class="panel wide"><div class="panel-head"><div><h3>Budget Usage</h3><p>Current month</p></div></div><div id="budgetChart"></div></section>
+</div>
+
+</main>
+</div>
+</div>
+<div id="toast"></div>
+<script src="js/auth.js"></script>
+<script src="js/reports.js"></script>
+</body>
+</html>

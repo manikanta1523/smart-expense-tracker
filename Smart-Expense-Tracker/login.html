@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Smart Expense Tracker</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <a class="brand auth-brand" href="index.html"><span class="brand-mark">₹</span> Smart Expense Tracker</a>
+    <div id="message"></div>
+    <h1>Welcome back</h1>
+    <p class="muted">Sign in to continue to your finance dashboard.</p>
+    <form id="loginForm" novalidate>
+      <label>Email<input type="email" id="email" placeholder="you@example.com" required></label>
+      <label>Password<input type="password" id="password" placeholder="Enter password" required></label>
+      <button class="btn btn-primary btn-block" type="submit">Login</button>
+    </form>
+    <p class="auth-switch">Don't have an account? <a href="signup.html">Create one</a></p>
+    <div class="demo-note"><strong>Demo Admin</strong><br>Email: admin@gmail.com<br>Password: admin123</div>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>
